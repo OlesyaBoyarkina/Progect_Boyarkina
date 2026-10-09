@@ -1,5 +1,0 @@
-V1 = float(input("60): "))
-V2 = float(input("80): "))
-S = float(input("500): "))
-T = float(input("3): "))
-result = abs(S)
