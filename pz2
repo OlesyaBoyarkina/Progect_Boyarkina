@@ -1,0 +1,31 @@
+def get_non_negative_float(prompt):
+    """Запрашивает у пользователя число >= 0 с защитой от ошибок."""
+    while True:
+        try:
+            value = float(input(prompt))
+            if value < 0:
+                print("Ошибка: значение не может быть отрицательным. Попробуйте снова.")
+                continue
+            return value
+        except ValueError:
+            print("Ошибка: введите число (цифрами), а не буквы. Попробуйте снова.")
+
+
+def main():
+    # Получаем данные с защитой от "дебилов"
+    v1 = get_non_negative_float("Введите скорость первого автомобиля (км/ч): ")
+    v2 = get_non_negative_float("Введите скорость второго автомобиля (км/ч): ")
+    s = get_non_negative_float("Введите начальное расстояние между ними (км): ")
+    t = get_non_negative_float("Введите время движения (ч): ")
+
+    # Вычисления
+    total_speed = v1 + v2
+    total_path = t * total_speed
+    distance = abs(s - total_path)
+
+    # Вывод результата
+    print(f"\nРасстояние между автомобилями через {t} ч: {distance:.2f} км")
+
+
+if name == "__main__":
+    main()
